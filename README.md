@@ -1,7 +1,5 @@
-# uncolor
-## 🎨 | Terminal styling well done
-
-## Note: *I don't know if I exported properly the file*
+# Uncolor
+## 🎨 | Uncomplicated colorizing tool for your terminal
 
 Inspired on the Node's package *Chalk*, Uncolor wants to make easier styles for the terminal. No reset needed, no aditional functions, just simple.
 
@@ -11,11 +9,11 @@ I made this package for have a style formatter different to Colorama, easy to us
 ### Installation
 **Note:** *Uncolor requires* **Python 3.10** *or higher*
 ```sh
-pip install colorize
+pip install uncolor
 ```
 
 ### Usage
-Corolize only has one function
+Uncolor only has one function
 ```py
 from uncolor import uncolor
 
