@@ -9,7 +9,7 @@ I made this package for have a style formatter different to Colorama, easy to us
 ### Installation
 **Note:** *Uncolor requires* **Python 3.10** *or higher*
 ```sh
-pip install uncolor
+pip install colorizing-tool-uncolor
 ```
 
 ### Usage
