@@ -15,7 +15,7 @@ pip install colorizing-tool-uncolor
 ### Usage
 Uncolor only has one function
 ```py
-from uncolor import uncolor
+import uncolor
 
 my_colorful_string = uncolor("This is really awesome!", ["red", "blueBg", "bold"])
 
