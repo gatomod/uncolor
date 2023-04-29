@@ -3,97 +3,53 @@ import sys
 
 ansiBase = '\033['
 
-# códigos ANSI más comunes / common ANSI codes
-
 
 def getStyle(style):
-    match style:
-        case 'black':
-            return '30m'
-        case 'red':
-            return '31m'
-        case 'green':
-            return '32m'
-        case 'brown':
-            return '33m'
-        case 'blue':
-            return '34m'
-        case 'purple':
-            return '35m'
-        case 'cyan':
-            return '36m'
-        case 'lightgray':
-            return '37m'
-        case 'darkgray':
-            return '90m'
-        case 'lightred':
-            return '91m'
-        case 'lightgreen':
-            return '92m'
-        case 'yellow':
-            return '93m'
-        case 'lightblue':
-            return '94m'
-        case 'lightpurple':
-            return '95m'
-        case 'lightcyan':
-            return '96m'
-        case 'white':
-            return '97m'
-        case 'blackBg':
-            return '40m'
-        case 'redBg':
-            return '41m'
-        case 'greenBg':
-            return '42m'
-        case 'brownBg':
-            return '43m'
-        case 'blueBg':
-            return '44m'
-        case 'purpleBg':
-            return '45m'
-        case 'cyanBg':
-            return '46m'
-        case 'lightgrayBg':
-            return '47m'
-        case 'darkgrayBg':
-            return '100m'
-        case 'lightredBg':
-            return '101m'
-        case 'lightgreenBg':
-            return '102m'
-        case 'yellowBg':
-            return '103m'
-        case 'lightblueBg':
-            return '104m'
-        case 'lightpurpleBg':
-            return '105m'
-        case 'lightcyanBg':
-            return '106m'
-        case 'whiteBg':
-            return '107m'
-        case 'bold':
-            return '1m'
-        case 'faint':
-            return '2m'
-        case 'italic':
-            return '3m'
-        case 'underline':
-            return '4m'
-        case 'blink':
-            return '5m'
-        case 'inverse':
-            return '7m'
-        case 'hidden':
-            return '8m'
-        case 'crossed':
-            return '9m'
-        case 'end':
-            return '0m'
-        case 'reset':
-            return '0m'
-        case _:
-            return ''
+    styles = {
+        'black': '30m',
+        'red': '31m',
+        'green': '32m',
+        'brown': '33m',
+        'blue': '34m',
+        'purple': '35m',
+        'cyan': '36m',
+        'lightgray': '37m',
+        'darkgray': '90m',
+        'lightred': '91m',
+        'lightgreen': '92m',
+        'yellow': '93m',
+        'lightblue': '94m',
+        'lightpurple': '95m',
+        'lightcyan': '96m',
+        'white': '97m',
+        'blackBg': '40m',
+        'redBg': '41m',
+        'greenBg': '42m',
+        'brownBg': '43m',
+        'blueBg': '44m',
+        'purpleBg': '45m',
+        'cyanBg': '46m',
+        'lightgrayBg': '47m',
+        'darkgrayBg': '100m',
+        'lightredBg': '101m',
+        'lightgreenBg': '102m',
+        'yellowBg': '103m',
+        'lightblueBg': '104m',
+        'lightpurpleBg': '105m',
+        'lightcyanBg': '106m',
+        'whiteBg': '107m',
+        'bold': '1m',
+        'faint': '2m',
+        'italic': '3m',
+        'underline': '4m',
+        'blink': '5m',
+        'inverse': '7m',
+        'hidden': '8m',
+        'crossed': '9m',
+        'end': '0m',
+        'reset': '0m',
+    }
+    return styles.get(style, '')
 
 
 def uncolor(text: str, styles: array):
@@ -103,8 +59,9 @@ def uncolor(text: str, styles: array):
     exporter = ''
 
     for style in styles:
-        if getStyle(style) != '':
-            exporter += ansiBase + getStyle(style)
+        code = getStyle(style)
+        if code != '':
+            exporter += ansiBase + code
         else:
             warnings.append(style)
 
